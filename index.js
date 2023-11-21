@@ -7,7 +7,7 @@ let yourCourse = document.querySelector('.course');
 let attendance = document.querySelector('.attendance')
 let submit = document.querySelector('.submit');
 let hairLength;
-let display = document.querySelector('p')
+let display = document.querySelector('.p')
 
 yourHair.forEach(length => {
     length.addEventListener('click', ()=>{
@@ -49,15 +49,18 @@ class Cheta extends Person{
 }
 
 submit.addEventListener('click', (event) =>{
-    let name = yourName.value
-    let age = yourAge.value
-    let height = yourHeight.value
-    let course = yourCourse.value
+    for(let i = 0; i < localStorage.length; i++){
 
-    let newCheta = new Cheta(name,age,height,hair,course,attendance)
-
-    display.innerHTML = newCheta.details()
-    console.log(display.innerHTML)
+        let name = yourName.value
+        let age = yourAge.value
+        let height = yourHeight.value
+        let course = yourCourse.value
+        
+        let newCheta = new Cheta(name,age,height,hair,course,attendance)
+        
+        display.innerHTML = newCheta.details()
+    }
+        console.log(display.innerHTML)
 
 
     event.preventDefault()
