@@ -4,25 +4,24 @@ let yourAge = document.querySelector('.age');
 let yourHeight = document.querySelector('.height');
 let yourHair = document.querySelectorAll('.length');
 let yourCourse = document.querySelector('.course');
-let attendance = document.querySelector('.attendance')
+let attend = document.querySelector('.attendance')
 let submit = document.querySelector('.submit');
-let hairLength;
-let display = document.querySelector('.p')
+let display = document.getElementById('display')
+let hairValue;
 
 yourHair.forEach(length => {
     length.addEventListener('click', ()=>{
-        hairLength = length.value
-        console.log(hairLength)
+        hairValue = length.value
+        console.log(hairValue)
     })
 })
 
 class Person{
     constructor(name,age,height,hair){
-        this.fullName = name;
-        this.age = age;
-        this.height = height;
-        this.hairLength = hair;
-        // this.courseRegistered = course;
+        this.fullName = yourName;
+        this.age = yourAge;
+        this.height = yourHeight;
+        this.hairLength = yourHair;
     }
 
     details(){
@@ -37,31 +36,29 @@ class Person{
 }
 
 class Cheta extends Person{
-    constructor(name, age, height, course, hair, attendance){
-        super(name, age, height, hair)
-        this.yourCourse = course
-        this.attendance = frequency
+    constructor(yourName, yourAge, yourHeight, yourHair, yourCourse, attending){
+        super(yourName, yourAge, yourHeight, yourHair)
+        this.course = yourCourse;
+        this.attending = attend;
     }
 
     attendance(){
-        return`${this.fullName}, a student of ${this.yourCourse} attends class ${this.attendance}`
+        return`${this.fullName}, a student of ${this.yourCourse} attends class ${this.attending}`
     }
 }
 
 submit.addEventListener('click', (event) =>{
-    for(let i = 0; i < localStorage.length; i++){
-
-        let name = yourName.value
-        let age = yourAge.value
-        let height = yourHeight.value
-        let course = yourCourse.value
-        
-        let newCheta = new Cheta(name,age,height,hair,course,attendance)
-        
-        display.innerHTML = newCheta.details()
-    }
-        console.log(display.innerHTML)
-
-
+    console.log(yourName.value, yourAge.value, yourHeight.value)
+    let myName = yourName.value
+    let Age = yourAge.value
+    let Height = yourHeight.value
+    let Course = yourCourse.value
+    let attendanceReport = attend.value
+    
+    let newCheta = new Cheta(myName, Age, Height, Course, hairValue, attendanceReport)
+    
+    display.innerHTML = newCheta.details()
+    console.log(newCheta.details())
+    
     event.preventDefault()
 })
