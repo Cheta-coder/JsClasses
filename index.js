@@ -26,7 +26,7 @@ class Person{
 
     details(){
         let acceptedHair;
-        if(this.hairLength === 'short'){
+        if(this.hairValue === 'short'){
             acceptedHair = 'accepted'
         }else{
             acceptedHair = 'not accepted'
