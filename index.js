@@ -12,7 +12,6 @@ let hairValue;
 yourHair.forEach(length => {
     length.addEventListener('click', ()=>{
         hairValue = length.value
-        console.log(hairValue)
     })
 })
 
@@ -26,12 +25,12 @@ class Person{
 
     details(){
         let acceptedHair;
-        if(this.hairValue === 'short'){
+        if(hairValue === 'short'){
             acceptedHair = 'accepted'
         }else{
             acceptedHair = 'not accepted'
         }
-        return `your hair length being ${this.hairValue} you are ${acceptedHair}`
+        return `Dear ${yourName.value} your hair length being ${hairValue} you therefore are ${acceptedHair}`
     }
 }
 
