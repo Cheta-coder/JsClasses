@@ -31,7 +31,7 @@ class Person{
         }else{
             acceptedHair = 'not accepted'
         }
-        return `your hair length being ${this.hairLength} you are ${acceptedHair}`
+        return `your hair length being ${this.hairValue} you are ${acceptedHair}`
     }
 }
 
